@@ -56,11 +56,12 @@ const RootMutation = new GraphQLObjectType({
     fields:{
         saveMessage:{
             type: MessageType,
-            args:{ _id: {type: GraphQLString}, 
-                        conversationId: {type: GraphQLString}, 
-                        author: {type: GraphQLString}, 
-                        createdAt: {type: GraphQLString}, 
-                        text: {type: GraphQLString}},
+            args:{
+                _id: {type: GraphQLString},
+                conversationId: {type: GraphQLString}, 
+                author: {type: GraphQLString}, 
+                createdAt: {type: GraphQLString}, 
+                text: {type: GraphQLString}},
             resolve(parent, args){
                 try{
                     const message = new Message({
